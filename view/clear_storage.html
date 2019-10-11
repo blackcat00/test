@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"
+  >
+  <meta
+    http-equiv="Expires"
+    content="0"
+  >
+  <meta
+    http-equiv="Pragma"
+    content="no-cache"
+  >
+  <meta
+    http-equiv="Cache-control"
+    content="no-cache"
+  >
+  <meta
+    name="screen-orientation"
+    content="portrait"
+  >
+  <meta
+    name="x5-orientation"
+    content="portrait"
+  >
+  <title>storage</title>
+  <style>
+    div {
+      word-break: break-all;
+    }
+
+    #btn {
+      width: 100px;
+      height: 40px;
+      line-height: 40px;
+      border: 1px solid #333;
+      text-align: center;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="con">
+    <div>当前链接：<span id="domain"></span></div>
+    <div>当前缓存数据：</div>
+    <ul id="json"></ul>
+    <div id="btn">点击清除</div>
+  </div>
+  <script>
+    document.getElementById('domain').innerHTML = `${location.href}`
+    let t = [];
+    let s = window.localStorage;
+    for (let k in s) {
+      if (s.hasOwnProperty(k)) t.push([k, localStorage[k]])
+    }
+    document.getElementById('json').innerHTML = t.map(v => `<li>${v[0]+': '+v[1]}</li>`).join('\n')
+
+    document.getElementById('btn').onclick = () => {
+      s.clear()
+      location.reload()
+    }
+  </script>
+</body>
+
+</html>

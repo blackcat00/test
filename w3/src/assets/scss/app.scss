@@ -1,0 +1,20 @@
+html, body {
+  background-color: #aaa;
+}
+body {
+  border: 1px dotted blue;
+}
+.box {
+  // display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  // overflow: auto;
+  .item {
+    width: 20px;
+    height: 200px;
+    border: 1px dashed #999;
+    flex: 1 0 auto;
+  }
+}

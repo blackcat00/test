@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="ie=edge"
+  >
+  <title>Document</title>
+</head>
+
+<body>
+  <span
+    id="btn"
+    onclick="send(this)"
+  >发送</span>
+  <script>
+    function send(btn) {
+      if (btn.innerHTML !== '发送') return;
+      btn.innerHTML = '30s';
+      setTimer(btn);
+    }
+
+    function setTimer(btn) {
+      let n = 30;
+      let timer = setInterval(() => {
+        n--;
+        if (n === 0) {
+          clearInterval(timer);
+          btn.innerHTML = '发送'
+          return;
+        };
+        btn.innerHTML = n + 's'
+      }, 1000)
+    }
+  </script>
+</body>
+
+</html>

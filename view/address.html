@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>project address</title>
+</head>
+<body>
+  <div id="container">
+    <audio id="m" src="https://static.fenxianglife.com/ui/h5-activity/2018summary/youngforyou.mp3" autoplay controls></audio>
+    <div id="t"></div>
+  </div>
+  <script>
+    var m = document.getElementById('m')
+    var con = document.getElementById('container')
+    var t = document.getElementById('t')
+    t.innerHTML = m.paused + ''
+    m.addEventListener('play', function() {
+      t.innerHTML = m.paused ? '暂停' : '播放'
+    })
+    m.addEventListener('pause',function() {
+      t.innerHTML = m.paused ? '暂停' : '播放'
+    })
+    // con.onclick= function() {
+    //   m.play()
+    // }
+    // con.click()
+  </script>
+</body>
+</html>
