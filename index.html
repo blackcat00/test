@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <!-- first comment -->
 <html>
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta http-equiv="pragma" content="no-cache">
-  <meta http-equiv="cache-control" content="no-cache">
-  <meta http-equiv="expires" content="Mon,27 Aug 2018 00:20:00 GMT">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="ie=edge"
+  >
+  <meta
+    http-equiv="pragma"
+    content="no-cache"
+  >
+  <meta
+    http-equiv="cache-control"
+    content="no-cache"
+  >
+  <meta
+    http-equiv="expires"
+    content="Mon,27 Aug 2018 00:20:00 GMT"
+  >
   <title>aa_project</title>
   <script>
     console.log(document.getElementsByTagName('li').length)
@@ -19,6 +35,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="vedio">
     <!-- <iframe src="https://v.qq.com/iframe/player.html?vid=j07779zgvno" allowFullScreen='true' frameborder="0" className="video"></iframe> -->
@@ -27,16 +44,16 @@
     </iframe> -->
   </div>
   <a href="./index.html?asd=dasfdsa">setsearch</a>
-  <div 
-    id="firstDiv" 
-    data-msg="my first div msg" 
-    class="text" 
-    title="first_div_text" 
-    lang="en" 
+  <div
+    id="firstDiv"
+    data-msg="my first div msg"
+    class="text"
+    title="first_div_text"
+    lang="en"
     dir="auto"
     style="font-size:20px;color: red"
-    >aa index</div>
-  <div style="height: 500px;background: red"></div>
+  >aa index</div>
+  <div style="height: 500px;background:#999"></div>
   <script>
     document.writeln('<div style="color:red">hahahha</div>')
     document.write('<script> console.log("hello")<\/script>')
@@ -47,65 +64,66 @@
     <li>third</li>
   </ul>
   <script>
-      console.log(document.getElementsByTagName('li')[1])
-      var div  = document.getElementsByClassName('text')[0];
-      var ul = document.getElementsByTagName('ul')[0];
-      var li = ul.getElementsByTagName('li');
-      var cli = ul.childNodes;
-      console.log(div, ul, li, cli)
-      console.log(div.nodeType, div.nodeName, div.nodeValue)
-      // 关系 只读
-      var li2= ul.childNodes; // parentNode previousSibling nexSibling ownerDocument
-      var ar_li = Array.prototype.slice.apply(li2, [0]);
-      console.log(JSON.stringify(ar_li))
-      // 操作 appendChild() insertBefore() replaceChild() removeChild()
-        // cloneNode() normalize()
-      
-      // Document 类型 
-        // 子节点
-      var html = document.documentElement;
-      var body = document.body;
-      var doctype = document.doctype; // 兼容性 & comment
-       // 信息
+    console.log(document.getElementsByTagName('li')[1])
+    var div = document.getElementsByClassName('text')[0];
+    var ul = document.getElementsByTagName('ul')[0];
+    var li = ul.getElementsByTagName('li');
+    var cli = ul.childNodes;
+    console.log(div, ul, li, cli)
+    console.log(div.nodeType, div.nodeName, div.nodeValue)
+    // 关系 只读
+    var li2 = ul.childNodes; // parentNode previousSibling nexSibling ownerDocument
+    var ar_li = Array.prototype.slice.apply(li2, [0]);
+    console.log(JSON.stringify(ar_li))
+    // 操作 appendChild() insertBefore() replaceChild() removeChild()
+    // cloneNode() normalize()
 
+    // Document 类型 
+    // 子节点
+    var html = document.documentElement;
+    var body = document.body;
+    var doctype = document.doctype; // 兼容性 & comment
+    // 信息
   </script>
   <script>
-      var _elem = document.body,
-          _startPos = 0,
-          _top = 0,
-          _refreshWrap = document.getElementsByTagName('ul')[0];
-      _elem.addEventListener('touchstart', (e) => {
-        console.log('start === ',e.touches[0].pageY)
-        _startPos = e.touches[0].pageY
-      }, false)
-  
-      _elem.addEventListener('touchmove', (e) => {
-        console.log('move: ', e.touches[0].pageY )
-        _top = e.touches[0].pageY - _startPos
-        if (_top > 0 && _top < 80 && false) {
-          _refreshWrap.style.opacity = _top / 80
-          _refreshWrap.style.top = _top + 'px'
-        }
-      }, false)
-  
-      _elem.addEventListener('touchend', (e) => {
-        console.log('end ===', e)
-        if (_top >= 50 && false) {
-          let params = Object.assign({}, this.state.orderParam, {lastId: ''})
-          this.setState({
-            pullLoading: true,
-            orderParam: params
-          }, () => {
-            this.getOrderList('pull')
-            this.getOrderCount()
-          })
-        } else {
-          _refreshWrap.style.opacity = 0
-          _refreshWrap.style.top = -40 + 'px'
-        }
-        _top = 0 // 重置
-      }, false)
-    </script>
+    var _elem = document.body,
+      _startPos = 0,
+      _top = 0,
+      _refreshWrap = document.getElementsByTagName('ul')[0];
+    _elem.addEventListener('touchstart', (e) => {
+      console.log('start === ', e.touches[0].pageY)
+      _startPos = e.touches[0].pageY
+    }, false)
+
+    _elem.addEventListener('touchmove', (e) => {
+      console.log('move: ', e.touches[0].pageY)
+      _top = e.touches[0].pageY - _startPos
+      if (_top > 0 && _top < 80 && false) {
+        _refreshWrap.style.opacity = _top / 80
+        _refreshWrap.style.top = _top + 'px'
+      }
+    }, false)
+
+    _elem.addEventListener('touchend', (e) => {
+      console.log('end ===', e)
+      if (_top >= 50 && false) {
+        let params = Object.assign({}, this.state.orderParam, {
+          lastId: ''
+        })
+        this.setState({
+          pullLoading: true,
+          orderParam: params
+        }, () => {
+          this.getOrderList('pull')
+          this.getOrderCount()
+        })
+      } else {
+        _refreshWrap.style.opacity = 0
+        _refreshWrap.style.top = -40 + 'px'
+      }
+      _top = 0 // 重置
+    }, false)
+  </script>
 </body>
 
 </html>
